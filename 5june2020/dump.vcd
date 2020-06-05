@@ -1,0 +1,38 @@
+$date
+	Fri Jun  5 08:20:26 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test $end
+$var wire 5 ! zeros [4:0] $end
+$var reg 16 " A [15:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1111111111111111 "
+b10000 !
+$end
+#100
+b1100 !
+b1111010101101111 "
+#200
+b1110 !
+b11111111111111 "
+#300
+b1 !
+b1 "
+#400
+b1001 !
+b1111000100001111 "
+#500
+b110 !
+b111100000100010 "
+#600
+b1010 !
+b111101010111100 "
+#700
