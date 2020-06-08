@@ -1,0 +1,112 @@
+#! /usr/share/iverilog-0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x19b65a0 .scope module, "test" "test" 2 2;
+ .timescale 0 0;
+v0x19d02f0_0 .var "t_a", 0 0;
+v0x19d03c0_0 .var "t_b", 0 0;
+v0x19d0490_0 .var "t_c", 0 0;
+v0x19d0560_0 .var "t_d", 0 0;
+v0x19d0630_0 .net "t_out", 0 0, L_0x19d1040; 1 drivers
+v0x19d0700_0 .var "t_s0", 0 0;
+v0x19d07d0_0 .var "t_s1", 0 0;
+S_0x19b6690 .scope module, "my_4x2_mux" "mux4x2" 2 5, 3 12, S_0x19b65a0;
+ .timescale 0 0;
+v0x19cfc00_0 .net "i0", 0 0, v0x19d02f0_0; 1 drivers
+v0x19cfcb0_0 .net "i1", 0 0, v0x19d03c0_0; 1 drivers
+v0x19cfd60_0 .net "i2", 0 0, v0x19d0490_0; 1 drivers
+v0x19cfe10_0 .net "i3", 0 0, v0x19d0560_0; 1 drivers
+v0x19cfef0_0 .net "mux1", 0 0, L_0x19d0a00; 1 drivers
+v0x19cffc0_0 .net "mux2", 0 0, L_0x19d0c70; 1 drivers
+v0x19d00d0_0 .alias "out", 0 0, v0x19d0630_0;
+v0x19d0150_0 .net "s0", 0 0, v0x19d0700_0; 1 drivers
+v0x19d0220_0 .net "s1", 0 0, v0x19d07d0_0; 1 drivers
+S_0x19cf6a0 .scope module, "mux_1" "mux2x1" 3 16, 3 1, S_0x19b6690;
+ .timescale 0 0;
+L_0x19d0850 .functor NOT 1, v0x19d07d0_0, C4<0>, C4<0>, C4<0>;
+L_0x19d0940 .functor AND 1, v0x19d02f0_0, L_0x19d0850, C4<1>, C4<1>;
+L_0x19d09a0 .functor AND 1, v0x19d03c0_0, v0x19d07d0_0, C4<1>, C4<1>;
+L_0x19d0a00 .functor OR 1, L_0x19d0940, L_0x19d09a0, C4<0>, C4<0>;
+v0x19cf790_0 .alias "a", 0 0, v0x19cfc00_0;
+v0x19cf850_0 .net "and_1", 0 0, L_0x19d0940; 1 drivers
+v0x19cf8f0_0 .net "and_2", 0 0, L_0x19d09a0; 1 drivers
+v0x19cf990_0 .alias "b", 0 0, v0x19cfcb0_0;
+v0x19cfa10_0 .alias "out", 0 0, v0x19cfef0_0;
+v0x19cfac0_0 .alias "s", 0 0, v0x19d0220_0;
+v0x19cfb80_0 .net "s_c", 0 0, L_0x19d0850; 1 drivers
+S_0x19cf120 .scope module, "mux_2" "mux2x1" 3 17, 3 1, S_0x19b6690;
+ .timescale 0 0;
+L_0x19d0b00 .functor NOT 1, v0x19d07d0_0, C4<0>, C4<0>, C4<0>;
+L_0x19d0b60 .functor AND 1, v0x19d0490_0, L_0x19d0b00, C4<1>, C4<1>;
+L_0x19d0c10 .functor AND 1, v0x19d0560_0, v0x19d07d0_0, C4<1>, C4<1>;
+L_0x19d0c70 .functor OR 1, L_0x19d0b60, L_0x19d0c10, C4<0>, C4<0>;
+v0x19cf210_0 .alias "a", 0 0, v0x19cfd60_0;
+v0x19cf2d0_0 .net "and_1", 0 0, L_0x19d0b60; 1 drivers
+v0x19cf370_0 .net "and_2", 0 0, L_0x19d0c10; 1 drivers
+v0x19cf410_0 .alias "b", 0 0, v0x19cfe10_0;
+v0x19cf490_0 .alias "out", 0 0, v0x19cffc0_0;
+v0x19cf540_0 .alias "s", 0 0, v0x19d0220_0;
+v0x19cf600_0 .net "s_c", 0 0, L_0x19d0b00; 1 drivers
+S_0x19b7f60 .scope module, "mux_3" "mux2x1" 3 18, 3 1, S_0x19b6690;
+ .timescale 0 0;
+L_0x19d0d70 .functor NOT 1, v0x19d0700_0, C4<0>, C4<0>, C4<0>;
+L_0x19d0dd0 .functor AND 1, L_0x19d0a00, L_0x19d0d70, C4<1>, C4<1>;
+L_0x19d0ec0 .functor AND 1, L_0x19d0c70, v0x19d0700_0, C4<1>, C4<1>;
+L_0x19d1040 .functor OR 1, L_0x19d0dd0, L_0x19d0ec0, C4<0>, C4<0>;
+v0x19b8050_0 .alias "a", 0 0, v0x19cfef0_0;
+v0x19ced10_0 .net "and_1", 0 0, L_0x19d0dd0; 1 drivers
+v0x19cedb0_0 .net "and_2", 0 0, L_0x19d0ec0; 1 drivers
+v0x19cee50_0 .alias "b", 0 0, v0x19cffc0_0;
+v0x19cef00_0 .alias "out", 0 0, v0x19d0630_0;
+v0x19cefa0_0 .alias "s", 0 0, v0x19d0150_0;
+v0x19cf080_0 .net "s_c", 0 0, L_0x19d0d70; 1 drivers
+    .scope S_0x19b65a0;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "dump.vcd";
+    %vpi_call 2 9 "$dumpvars", 2'sb01, S_0x19b65a0;
+    %set/v v0x19d02f0_0, 1, 1;
+    %set/v v0x19d03c0_0, 0, 1;
+    %set/v v0x19d0490_0, 1, 1;
+    %set/v v0x19d0560_0, 1, 1;
+    %set/v v0x19d0700_0, 0, 1;
+    %set/v v0x19d07d0_0, 1, 1;
+    %delay 5, 0;
+    %set/v v0x19d02f0_0, 0, 1;
+    %set/v v0x19d03c0_0, 1, 1;
+    %set/v v0x19d0490_0, 0, 1;
+    %set/v v0x19d0560_0, 0, 1;
+    %set/v v0x19d0700_0, 0, 1;
+    %set/v v0x19d07d0_0, 1, 1;
+    %delay 5, 0;
+    %set/v v0x19d02f0_0, 0, 1;
+    %set/v v0x19d03c0_0, 0, 1;
+    %set/v v0x19d0490_0, 1, 1;
+    %set/v v0x19d0560_0, 0, 1;
+    %set/v v0x19d0700_0, 1, 1;
+    %set/v v0x19d07d0_0, 0, 1;
+    %delay 5, 0;
+    %set/v v0x19d02f0_0, 0, 1;
+    %set/v v0x19d03c0_0, 0, 1;
+    %set/v v0x19d0490_0, 0, 1;
+    %set/v v0x19d0560_0, 1, 1;
+    %set/v v0x19d0700_0, 1, 1;
+    %set/v v0x19d07d0_0, 1, 1;
+    %delay 5, 0;
+    %set/v v0x19d02f0_0, 1, 1;
+    %set/v v0x19d03c0_0, 0, 1;
+    %set/v v0x19d0490_0, 0, 1;
+    %set/v v0x19d0560_0, 0, 1;
+    %set/v v0x19d0700_0, 0, 1;
+    %set/v v0x19d07d0_0, 0, 1;
+    %vpi_call 2 50 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";
